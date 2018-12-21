@@ -10,7 +10,7 @@ from sklearn import preprocessing
 import nltk
 from nltk.corpus import stopwords
 import matplotlib.pyplot as plt
-#import mpld3
+import mpld3
 
 corpus_raw = text.lower()
 
@@ -55,7 +55,7 @@ sentences = []
 for sentence in raw_sentences:
     sentences.append(sentence.split())
 
-model = gensim.models.Word2Vec(sentences, min_count=10,iter=20)
+model = gensim.models.Word2Vec(sentences, min_count=10,iter=20 )
 
 vocab = list(model.wv.vocab)
 X = model[vocab]
